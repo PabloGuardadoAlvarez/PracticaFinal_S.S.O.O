@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{F2426DAB-01F1-4A14-B622-166486512532}|Default">
+  <MonoDevelop.Ide.ItemProperties.SimuladorTLB FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SimuladorTLB/tlb.c">
+    <Files>
+      <File FileName="SimuladorTLB/kerneltyr.c" Line="15" Column="1" />
+      <File FileName="SimuladorTLB/tlb.c" Line="29" Column="1" />
+      <File FileName="../../../../../../Users/pabloguardado/Desktop/enunciado_practica_2019_2020/writefifo.c" Line="1" Column="1" />
+      <File FileName="../../../../../../Users/pabloguardado/Desktop/enunciado_practica_2019_2020/readfifo.c" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SimuladorTLB" expanded="True">
+            <Node name="SimuladorTLB" expanded="True">
+              <Node name="tlb.c" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
