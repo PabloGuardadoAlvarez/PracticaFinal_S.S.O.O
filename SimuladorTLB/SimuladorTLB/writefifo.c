@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -9,37 +9,26 @@
 #define MAX_LINE 100
 
 int main(){
-  FILE *fp;
+    FILE *fp;
 	int pipe;
 	char line[MAX_LINE];
-  pid_t pid;
-
+    pid_t pid;
+                
                 fp = fopen("accesos_memoria.txt", "r");
-                mkfifo("/tmp/myFIFO", 0666);
+                mkfifo("/tmp/myFIFO1", 0666);          
                 pipe = open("/tmp/myFIFO", O_WRONLY);
-                pid = fork();
-                if(pid==0){
-
-                char *args[] = {"pb",0};
-                char *env[] = {0};
-                execve("tlb",args,env);
-
-                }else{
 
                 if (fp == NULL){
                     printf("Could not open file %s","accesos_memoria.txt");
                     return 1;
                 }else{
-                    //printf("file opened succesfully");
-                }
+                    printf("file opened succesfully");
 
-                while (fgets(line, MAX_LINE, (FILE*)fp) != NULL){
-                    write(pipe, line, sizeof(line));
-                    sleep(2);
                 }
+                while (fgets(line, MAX_LINE, (FILE*)fp) != NULL){
+                    write(pipe, line, strlen(line));
+                }  
                fclose(fp);
                close(pipe);
-
-                }
 return 0;
-}
+}   

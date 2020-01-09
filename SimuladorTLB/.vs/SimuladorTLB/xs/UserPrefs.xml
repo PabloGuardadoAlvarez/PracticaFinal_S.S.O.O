@@ -1,18 +1,18 @@
 ﻿<Properties StartupConfiguration="{F2426DAB-01F1-4A14-B622-166486512532}|Default">
   <MonoDevelop.Ide.ItemProperties.SimuladorTLB FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SimuladorTLB/tlb.c">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SimuladorTLB/writefifo.c">
     <Files>
-      <File FileName="SimuladorTLB/kerneltyr.c" Line="15" Column="1" />
-      <File FileName="SimuladorTLB/tlb.c" Line="29" Column="1" />
-      <File FileName="../../../../../../Users/pabloguardado/Desktop/enunciado_practica_2019_2020/writefifo.c" Line="1" Column="1" />
-      <File FileName="../../../../../../Users/pabloguardado/Desktop/enunciado_practica_2019_2020/readfifo.c" Line="1" Column="1" />
+      <File FileName="SimuladorTLB/kerneltyr.c" Line="11" Column="1" />
+      <File FileName="SimuladorTLB/tlb.c" />
+      <File FileName="SimuladorTLB/writefifo.c" Line="1" Column="19" />
+      <File FileName="SimuladorTLB/readfifo.c" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SimuladorTLB" expanded="True">
             <Node name="SimuladorTLB" expanded="True">
-              <Node name="tlb.c" selected="True" />
+              <Node name="kerneltyr.c" selected="True" />
             </Node>
           </Node>
         </State>

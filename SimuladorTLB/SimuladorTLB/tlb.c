@@ -17,19 +17,19 @@ typedef struct {
 
 int main()
 {
-	char line[MAX_LINE];	
+	char line[MAX_LINE];
 	int pipe;
 
 	if ((pipe = open("/tmp/myFIFO",O_RDONLY)) < 0)
 	{
 		printf("ERROR: Imposible abrir el pipe FIFOTLB\n");
-		return -1;       
-	}
+		return -1;
+	}else{
+        //printf("Se a abierto el pipe FIFOTLB \n");
+    }
+
 	while(read(pipe, line, MAX_LINE))
-		// Print the read string and close
 	    printf("\nHe leido: %s\n", line);
-	close(pipe);	
-	
+	close(pipe);
 	return 0;
 }
-
