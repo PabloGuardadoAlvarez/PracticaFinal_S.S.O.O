@@ -13,33 +13,31 @@ int main(){
 	int pipe;
 	char line[MAX_LINE];
   pid_t pid;
+  char * myfifo = "/tmp/myfifo";
 
                 fp = fopen("accesos_memoria.txt", "r");
-                mkfifo("/tmp/myFIFO", 0666);
-                pipe = open("/tmp/myFIFO", O_WRONLY);
+                mkfifo(myfifo, 0666);
+                pipe = open(myfifo, O_WRONLY);
                 pid = fork();
                 if(pid==0){
-
-                char *args[] = {"pb",0};
-                char *env[] = {0};
-                execve("tlb",args,env);
-
+                  char *args[] = {"pb",0};
+                  char *env[] = {0};
+                  execve("tlb",args,env);
                 }else{
-
-                if (fp == NULL){
-                    printf("Could not open file %s","accesos_memoria.txt");
-                    return 1;
-                }else{
-                    //printf("file opened succesfully");
-                }
-
-                while (fgets(line, MAX_LINE, (FILE*)fp) != NULL){
-                    write(pipe, line, sizeof(line));
-                    sleep(2);
-                }
-               fclose(fp);
-               close(pipe);
-
+                  printf("kerneltyr, mi pid es %d y la de tlb es %d\n",
+                  getppid(),getpid());
+                  if (fp == NULL){
+                        printf("Could not open file %s","accesos_memoria.txt");
+                        return 1;
+                  }else{
+                        printf("file opened succesfully");
+                  }
+                  while (fgets(line, MAX_LINE, (FILE*)fp) != NULL){
+                        write(pipe, line, sizeof(line));
+                        sleep(2);
+                  }
+                 fclose(fp);
+                 close(pipe);
                 }
 return 0;
 }
