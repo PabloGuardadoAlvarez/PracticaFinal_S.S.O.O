@@ -25,7 +25,7 @@ int main()
 		printf("ERROR: Imposible abrir el pipe FIFOTLB\n");
 		return -1;
 	}else{
-        printf("Se a abierto el pipe FIFOTLB \n");
+        //printf("Se a abierto el pipe FIFOTLB \n");
     }
 
 	while(read(pipe, line, MAX_LINE))

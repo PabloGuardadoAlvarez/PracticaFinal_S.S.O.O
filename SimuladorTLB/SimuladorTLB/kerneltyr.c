@@ -13,11 +13,10 @@ int main(){
 	int pipe;
 	char line[MAX_LINE];
   pid_t pid;
-  char * myfifo = "/tmp/myfifo";
 
                 fp = fopen("accesos_memoria.txt", "r");
-                mkfifo(myfifo, 0666);
-                pipe = open(myfifo, O_WRONLY);
+                mkfifo("/tmp/myFIFO", 0666);
+                pipe = open("/tmp/myFIFO", O_WRONLY);
                 pid = fork();
                 if(pid==0){
                   char *args[] = {"pb",0};
@@ -32,8 +31,8 @@ int main(){
                   }else{
                         printf("file opened succesfully");
                   }
-                  while (fgets(line, MAX_LINE, (FILE*)fp) != NULL){
-                        write(pipe, line, sizeof(line));
+                  while (fgets(line, MAX_LINE,fp)){
+                        write(pipe, line, strlen(line));
                         sleep(2);
                   }
                  fclose(fp);

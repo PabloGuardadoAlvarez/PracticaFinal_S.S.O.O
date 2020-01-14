@@ -13,9 +13,9 @@ int main(){
 	int pipe;
 	char line[MAX_LINE];
     pid_t pid;
-                
+
                 fp = fopen("accesos_memoria.txt", "r");
-                mkfifo("/tmp/myFIFO1", 0666);          
+                mkfifo("/tmp/myFIFO", 0666);          
                 pipe = open("/tmp/myFIFO", O_WRONLY);
 
                 if (fp == NULL){
@@ -27,8 +27,8 @@ int main(){
                 }
                 while (fgets(line, MAX_LINE, (FILE*)fp) != NULL){
                     write(pipe, line, strlen(line));
-                }  
+                }
                fclose(fp);
                close(pipe);
 return 0;
-}   
+}
