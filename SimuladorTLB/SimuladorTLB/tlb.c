@@ -18,18 +18,20 @@ typedef struct {
 int main()
 {
 	char line[MAX_LINE];
-	int pipe;
+	int pipe, aux;
 
 	if ((pipe = open("/tmp/myFIFO",O_RDONLY)) < 0)
 	{
 		printf("ERROR: Imposible abrir el pipe FIFOTLB\n");
 		return -1;
 	}else{
-        //printf("Se a abierto el pipe FIFOTLB \n");
+        printf("Se a abierto el pipe FIFOTLB \n");
     }
 
-	while(read(pipe, line, MAX_LINE))
-	    printf("\n%s\n", line);
+	while(read(pipe, line, MAX_LINE)){
+    sscanf(line,"%X",&aux);
+    printf("tlb: %X\n",aux);
+  }
 	close(pipe);
 	return 0;
 }

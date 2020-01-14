@@ -10,8 +10,9 @@
 
 int main(){
   FILE *fp;
-	int pipe;
+	int pipe ,aux;
 	char line[MAX_LINE];
+  char charac[MAX_LINE];
   pid_t pid;
 
                 fp = fopen("accesos_memoria.txt", "r");
@@ -29,10 +30,12 @@ int main(){
                         printf("Could not open file %s","accesos_memoria.txt");
                         return 1;
                   }else{
-                        printf("file opened succesfully");
+                        //printf("file opened succesfully");
                   }
-                  while (fgets(line, MAX_LINE,fp)){
-                        write(pipe, line, strlen(line));
+                  while (fgets(line,MAX_LINE,fp)){
+                        sscanf(line,"%X",&aux);
+                        sprintf(line,"%04X",aux);
+                        write(pipe,line,strlen(line));
                         sleep(2);
                   }
                  fclose(fp);
