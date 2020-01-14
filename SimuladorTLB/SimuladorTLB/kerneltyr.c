@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -9,11 +9,10 @@
 #define MAX_LINE 100
 
 int main(){
-  FILE *fp;
+	FILE *fp;
 	int pipe ,aux;
 	char line[MAX_LINE];
-  char charac[MAX_LINE];
-  pid_t pid;
+	pid_t pid;
 
                 fp = fopen("accesos_memoria.txt", "r");
                 mkfifo("/tmp/myFIFO", 0666);
